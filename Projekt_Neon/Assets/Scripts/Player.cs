@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,25 +13,53 @@ public class Player : MonoBehaviour
     public float jumpForce;
     public int jumpAmount;
     public float jumpTime;
+    public float knockbackForce;
     
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-
+    public Transform spawnPoint;
+    
     private float moveInput;
     private bool facingRight = true;
     private bool isGrounded;
     private bool isJumping;
     private int extraJumps;
     private float jumpTimeCounter;
-    
+
     private Rigidbody2D rb;
+
+    void Awake()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         extraJumps = jumpAmount;
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+    }
+
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        spawnPoint = GameObject.Find("PlayerSpawnStart").transform;
+
+        if(transform.position.x < spawnPoint.position.x)
+        {
+            spawnPoint = GameObject.Find("PlayerSpawnEnd").transform;
+            transform.position = spawnPoint.position;
+        }
+        else if(transform.position.x > spawnPoint.position.x)
+        {
+            transform.position = spawnPoint.position;
+        }
     }
 
     // Update is called once per frame
@@ -90,5 +119,29 @@ public class Player : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log(health);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            int direction = 0;
+            if(transform.position.x > collision.transform.position.x)direction = -1;
+            else direction = 1;
+            Debug.Log(new Vector2(direction, 1) * knockbackForce);
+            rb.velocity = new Vector2(direction, 1) * knockbackForce;
+        }
+    }
+    public void Knockback(Vector2 direction)
+    {
+        Vector2 difference = direction - new Vector2(transform.position.x, transform.position.y);
+        difference = difference.normalized * knockbackForce;
+        rb.AddForce(difference, ForceMode2D.Impulse);
+        
     }
 }

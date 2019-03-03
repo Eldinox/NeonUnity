@@ -40,7 +40,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5835729270777619602}
   - component: {fileID: 5835729271506262784}
-  - component: {fileID: 5835729271506262815}
   - component: {fileID: 5835729271506262814}
   - component: {fileID: 5835729271506262813}
   - component: {fileID: 5835729271506262812}
@@ -115,32 +114,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5835729271506262815
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5835729271506262810}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11027622, y: -0.332901}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5762833, y: 0.47698888}
-    oldSize: {x: 5.99, y: 6.95}
-    newSize: {x: 19.8, y: 12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5217733, y: 6.8955345}
-  m_EdgeRadius: 0
 --- !u!50 &5835729271506262814
 Rigidbody2D:
   serializedVersion: 4
@@ -193,6 +166,7 @@ MonoBehaviour:
   jumpForce: 20
   jumpAmount: 1
   jumpTime: 0.2
+  knockbackForce: 10
   groundCheck: {fileID: 5835729271349878043}
   checkRadius: 0.5
   whatIsGround:

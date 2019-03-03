@@ -6,8 +6,17 @@ public class Rusher : Enemy
 {
     public float stopDistance;
     public float attackSpeed;
+    public float dashSpeed;
+    public float knockbackForce;
 
     private float attackTime;
+    private Rigidbody2D rb;
+
+    public override void Start()
+    {
+        base.Start();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,17 +40,23 @@ public class Rusher : Enemy
 
     IEnumerator Attack()
     {
-        //player.GetComponent<Player>().TakeDamage(damage);
-        Vector2 originalPosition = transform.position;
-        Vector2 targetPosition = player.position;
+        yield return new WaitForSeconds(1);
+        int direction = 0;
+        if(player.transform.position.x < transform.position.x)direction = -1;
+        else direction = 1;
+        rb.velocity = new Vector2(direction, 0) * dashSpeed;
+    }
 
-        float percent = 0;
-        while(percent <= 1)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
         {
-            percent += Time.deltaTime * attackSpeed;
-            float formula = (-Mathf.Pow(percent, 2) + percent) * 4;
-            transform.position = Vector2.Lerp(originalPosition, targetPosition, formula);
-            yield return null;
+            Vector2 difference = new Vector2(transform.position.x, transform.position.y) - new Vector2(collision.transform.position.x, collision.transform.position.y);
+            difference = difference.normalized * knockbackForce;
+            rb.AddForce(difference, ForceMode2D.Impulse);
+            
+            player.GetComponent<Player>().TakeDamage(damage);
+            //player.GetComponent<Player>().Knockback(transform.position);
         }
     }
 }

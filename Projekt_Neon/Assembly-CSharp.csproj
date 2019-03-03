@@ -53,28 +53,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\Rusher.cs" />
-     <Compile Include="Assets\Scripts\Parallaxing.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Spider.cs" />
+     <Compile Include="Assets\Scripts\General\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\General\CursorFollow.cs" />
+     <Compile Include="Assets\Scripts\General\DeathBox.cs" />
+     <Compile Include="Assets\Scripts\General\Parallaxing.cs" />
+     <Compile Include="Assets\Scripts\General\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\PhysicsScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\TheTopicbirdTools\ToDoList\ToDoList.cs" />
      <None Include="Assets\TheTopicbirdTools\ToDoList\readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -281,13 +286,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Unity_Projects/Projekt_Neon/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Unity_Projects/Projekt_Neon/NeonUnity/Projekt_Neon/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
