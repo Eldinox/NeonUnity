@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public int jumpAmount;
     public float jumpTime;
     public float knockbackForce;
+    public float knockbackDuration;
+    public float dashSpeed;
+    public float startDashTime;
     
     public Transform groundCheck;
     public float checkRadius;
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
     private bool isJumping;
     private int extraJumps;
     private float jumpTimeCounter;
+    private float dashTime;
 
     private Rigidbody2D rb;
 
@@ -44,6 +48,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         extraJumps = jumpAmount;
+        dashTime = startDashTime;
         SceneManager.activeSceneChanged += ChangedActiveScene;
     }
 
@@ -93,6 +98,27 @@ public class Player : MonoBehaviour
         {
             isJumping = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(dashTime > 0)
+            {
+                dashTime -= Time.deltaTime;
+
+                if(facingRight)
+                {
+                    StartCoroutine(Dash(1));
+                }
+                else
+                {
+                    StartCoroutine(Dash(-1));
+                }
+            }
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            dashTime = startDashTime;
+        }
     }
 
     private void FixedUpdate()
@@ -130,18 +156,28 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            int direction = 0;
-            if(transform.position.x > collision.transform.position.x)direction = -1;
-            else direction = 1;
-            Debug.Log(new Vector2(direction, 1) * knockbackForce);
-            rb.velocity = new Vector2(direction, 1) * knockbackForce;
+            StartCoroutine(Knockback(collision.transform));
         }
     }
-    public void Knockback(Vector2 direction)
+    public IEnumerator Knockback(Transform direction)
     {
-        Vector2 difference = direction - new Vector2(transform.position.x, transform.position.y);
-        difference = difference.normalized * knockbackForce;
-        rb.AddForce(difference, ForceMode2D.Impulse);
+        float timer = 0;
         
+        while(knockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            rb.AddForce(new Vector2(direction.position.x * knockbackForce * 100, direction.position.y * knockbackForce), ForceMode2D.Impulse);
+            Flip();
+        }
+        yield return 0;
+    }
+    public IEnumerator Dash(int direction)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + direction, transform.position.y), dashSpeed);
+
+            yield return null;
+        }
     }
 }

@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 5835729270777619602}
   - component: {fileID: 5835729271506262784}
   - component: {fileID: 5835729271506262814}
-  - component: {fileID: 5835729271506262813}
   - component: {fileID: 5835729271506262812}
   - component: {fileID: 5835729271506262811}
   m_Layer: 9
@@ -102,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f61c63e2216a5e34b82d7495e9de84a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,20 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5835729271506262813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5835729271506262810}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c087c79d2d1c34c97e432fc9626457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravityModifier: 1
-  minGroundNormalY: 0.65
 --- !u!114 &5835729271506262812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,12 +151,14 @@ MonoBehaviour:
   jumpForce: 20
   jumpAmount: 1
   jumpTime: 0.2
-  knockbackForce: 10
+  knockbackForce: 0.07
+  knockbackDuration: 0.5
   groundCheck: {fileID: 5835729271349878043}
   checkRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  spawnPoint: {fileID: 0}
 --- !u!60 &5835729271506262811
 PolygonCollider2D:
   m_ObjectHideFlags: 0
