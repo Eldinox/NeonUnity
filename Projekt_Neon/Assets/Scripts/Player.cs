@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            StartCoroutine(Knockback(collision.transform));
+            //StartCoroutine(Knockback(collision.transform));
         }
     }
     public IEnumerator Knockback(Transform direction)
@@ -173,12 +173,13 @@ public class Player : MonoBehaviour
     }
     public IEnumerator Dash(int direction)
     {
+        GetComponent<PolygonCollider2D>().enabled = false;
         for(int i = 0; i < 10; i++)
         {
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + direction, transform.position.y), dashSpeed);
 
             yield return null;
         }
+        GetComponent<PolygonCollider2D>().enabled = true;
     }
 }
-/* */

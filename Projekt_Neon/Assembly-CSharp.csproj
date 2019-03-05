@@ -59,6 +59,9 @@
      <Compile Include="Assets\Scripts\General\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\General\CursorFollow.cs" />
      <Compile Include="Assets\Scripts\General\DeathBox.cs" />
+     <Compile Include="Assets\Scripts\General\Dialogue.cs" />
+     <Compile Include="Assets\Scripts\General\DialogueManager.cs" />
+     <Compile Include="Assets\Scripts\General\DialogueTrigger.cs" />
      <Compile Include="Assets\Scripts\General\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\General\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\PhysicsScript.cs" />

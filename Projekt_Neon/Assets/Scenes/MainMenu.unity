@@ -189,7 +189,7 @@ Transform:
   m_LocalScale: {x: 2.327932, y: 1.8026922, z: 2.327932}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304291335
 GameObject:
@@ -297,13 +297,122 @@ RectTransform:
   - {fileID: 447105305}
   - {fileID: 767723518}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &347058593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 347058595}
+  - component: {fileID: 347058594}
+  m_Layer: 0
+  m_Name: ToDo-List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &347058594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347058593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948c6eac03994cd49bad23b71ceeec7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: "To Do List/Dinge die wir kl\xE4ren m\xFCssen"
+  textList:
+  - s: Lebensbalken und Death
+    state: 2
+    show: 0
+    deleteQuestion: 0
+  - s: Summoner Enemy
+    state: 2
+    show: 0
+    deleteQuestion: 0
+  - s: Jumper Enemy
+    state: 2
+    show: 0
+    deleteQuestion: 0
+  - s: 'Knockback bei Kollision
+
+      Hat eigentlich funktioniert aber dann ging Bob auf Mondflug'
+    state: 2
+    show: 0
+    deleteQuestion: 0
+  - s: 'Rusher Cooldown
+
+      Was macht Rusher, wenn sein Angriff auf Cooldown,
+
+      aber er in Reichweite ist?'
+    state: 3
+    show: 0
+    deleteQuestion: 0
+  - s: 'Spider Cooldown
+
+      Was macht die Spinne zwischen Angriffen?
+
+      Neu positionieren? Chillen?'
+    state: 3
+    show: 0
+    deleteQuestion: 0
+  - s: "Dialog Funktion\nBeliebig langer Dialog mit mehreren Personen an beliebigen
+      Stellen \noder durch NPC\xB4s ausgel\xF6st funktioniert sehr gut. Bild des sprechenden\nCharakters
+      einblenden?."
+    state: 4
+    show: 0
+    deleteQuestion: 0
+  - s: Player Dash
+    state: 4
+    show: 0
+    deleteQuestion: 0
+  - s: "Rusher patrolling\nBeliebig viele Patroll-Punkte die zuf\xE4llig abgelaufen
+      werden."
+    state: 4
+    show: 0
+    deleteQuestion: 0
+  - s: 'Spider Angriff*
+
+      Kleine Anpassungen (am besten bei einem Treffen)'
+    state: 4
+    show: 0
+    deleteQuestion: 0
+  - s: "Hauptmen\xFC\nKleine Animationen, Custom Cursor..."
+    state: 4
+    show: 0
+    deleteQuestion: 0
+  - s: "Example Level\nBlanko Level mit allen n\xF6tigen Dingen um ein Level zu bauen
+      fertig."
+    state: 4
+    show: 0
+    deleteQuestion: 0
+--- !u!4 &347058595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347058593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386146491
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &386146494
 Animator:
@@ -573,7 +682,7 @@ RectTransform:
   - {fileID: 1172460323}
   - {fileID: 929685003}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -989,7 +1098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068903241
 GameObject:
@@ -1071,5 +1180,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

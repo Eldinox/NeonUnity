@@ -7,7 +7,7 @@ using System.Collections.Generic;
 [ExecuteInEditMode] public class ToDoList : MonoBehaviour {	
 	[Serializable] public class TextObject {
 		public string s = "empty content item";
-		public enum State {Default, Bug, Active, Finished};
+		public enum State {Default, Bug, Active, Question, Finished};
 		public State state;
 		public bool show = true;
 		public bool deleteQuestion = false;

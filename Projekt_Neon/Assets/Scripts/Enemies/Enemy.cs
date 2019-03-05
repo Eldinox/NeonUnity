@@ -8,11 +8,18 @@ public class Enemy : MonoBehaviour
     public int damage;
     public float speed;
     public float attackCooldown;
+    public float activateDistance;
+    public float spottingRange;
+    
     
     [HideInInspector]
     public Transform player;
     [HideInInspector]
-    public float distance;
+    public string state;
+
+    public bool facingRight = false;
+    public bool attacking = false;
+    public bool chasing = false;
     
     // Start is called before the first frame update
     public virtual void Start()
@@ -23,8 +30,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.position);
-        Debug.Log("Rusher distance: " + distance);
+        //distance = Vector2.Distance(transform.position, player.position);
     }
 
     public void TakeDamage(int damageAmount)
@@ -35,5 +41,13 @@ public class Enemy : MonoBehaviour
     	{
     		Destroy(this.gameObject);
     	}
+    }
+
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
     }
 }

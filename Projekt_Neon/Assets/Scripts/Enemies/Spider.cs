@@ -9,7 +9,6 @@ public class Spider : Enemy
     public Transform shotPoint;
 
     private float attackTime;
-    private bool facingRight = false;
 
     // Start is called before the first frame update
     public override void Start()
@@ -43,14 +42,6 @@ public class Spider : Enemy
         {
             Flip();
         }
-    }
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
     }
 
     IEnumerator Attack()

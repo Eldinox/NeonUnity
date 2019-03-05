@@ -122,6 +122,10 @@ public class ToDoListEditor : Editor {
 		} else if (state == ToDoList.TextObject.State.Bug){
 			c = new Color(1f, 0.5f, 0.8f);
 		}
+		else if(state == ToDoList.TextObject.State.Question)
+		{
+			c = new Color(0f, 0.9f, 1f);
+		}
 		return c;
 	}
 
